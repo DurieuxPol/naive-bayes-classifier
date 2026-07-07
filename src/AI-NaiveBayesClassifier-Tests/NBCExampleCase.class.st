@@ -1,6 +1,6 @@
 Class {
-	#name : #NBCExampleCase,
-	#superclass : #Object,
+	#name : 'NBCExampleCase',
+	#superclass : 'Object',
 	#instVars : [
 		'arrayOfDocuments',
 		'arrayOfLabels',
@@ -11,65 +11,66 @@ Class {
 		'wordLikelihoods',
 		'documentLikelihoods'
 	],
-	#category : #'AI-NaiveBayesClassifier-Tests'
+	#category : 'AI-NaiveBayesClassifier-Tests',
+	#package : 'AI-NaiveBayesClassifier-Tests'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 NBCExampleCase >> arrayOfDocuments [
 	self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 NBCExampleCase >> arrayOfLabels [
 	self subclassResponsibility
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 NBCExampleCase >> documentCountsByLabelAndWord [
 	self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 NBCExampleCase >> documentLikelihoods [
 	self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 NBCExampleCase >> documentPriors [
 	self subclassResponsibility
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 NBCExampleCase >> labelCounts [
 	self subclassResponsibility
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 NBCExampleCase >> labelLikelihoods [
 	self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 NBCExampleCase >> labelPriors [
 	self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 NBCExampleCase >> labels [
 	self subclassResponsibility
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 NBCExampleCase >> predictedLabels [
 	self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 NBCExampleCase >> vocabulary [
 	self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 NBCExampleCase >> wordLikelihoods [
 	self subclassResponsibility
 ]

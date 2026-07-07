@@ -1,24 +1,57 @@
 Class {
-	#name : #AINaiveBayesClassifierTest,
-	#superclass : #TestCase,
+	#name : 'AINaiveBayesClassifierTest',
+	#superclass : 'ParametrizedTestCase',
 	#instVars : [
 		'exampleCase',
 		'classifier'
 	],
-	#category : #'AI-NaiveBayesClassifier-Tests'
+	#classInstVars : [
+		'example1',
+		'example2'
+	],
+	#category : 'AI-NaiveBayesClassifier-Tests',
+	#package : 'AI-NaiveBayesClassifier-Tests'
 }
 
-{ #category : #running }
+{ #category : 'loading' }
+AINaiveBayesClassifierTest class >> loadExamples [
+
+	example1 := NBCCase1 new.
+	example2 := NBCCase2 new
+]
+
+{ #category : 'building suites' }
+AINaiveBayesClassifierTest class >> testParameters [
+
+	self loadExamples.
+
+	^ ParametrizedTestMatrix new forSelector: #exampleCase addOptions: {
+			  example1.
+			  example2 }
+]
+
+{ #category : 'accessing' }
+AINaiveBayesClassifierTest >> exampleCase [
+
+	^ exampleCase
+]
+
+{ #category : 'accessing' }
+AINaiveBayesClassifierTest >> exampleCase: anObject [
+
+	exampleCase := anObject
+]
+
+{ #category : 'running' }
 AINaiveBayesClassifierTest >> setUp [
 	super setUp.
-	exampleCase := NBCCase2 new.
 	
 	classifier := AINaiveBayesClassifier new.
 	classifier vocabulary: exampleCase vocabulary.
 	classifier labels: exampleCase labels.
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 AINaiveBayesClassifierTest >> testDocumentCountByLabelAndWordInWithLabels [
 	| expected actual |
 	expected := exampleCase documentCountsByLabelAndWord.
@@ -30,7 +63,7 @@ AINaiveBayesClassifierTest >> testDocumentCountByLabelAndWordInWithLabels [
 	self assert: actual equals: expected 
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 AINaiveBayesClassifierTest >> testExtractVocabularyFrom [
 	| expected actual |
 	
@@ -41,7 +74,7 @@ AINaiveBayesClassifierTest >> testExtractVocabularyFrom [
 	
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 AINaiveBayesClassifierTest >> testFrequencyOfLabels [
 	| expected actual |
 	
@@ -51,7 +84,7 @@ AINaiveBayesClassifierTest >> testFrequencyOfLabels [
 	self assert: actual equals: expected
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 AINaiveBayesClassifierTest >> testLabelCount [
 	| expected actual |
 	expected := exampleCase labelCounts.
@@ -59,7 +92,7 @@ AINaiveBayesClassifierTest >> testLabelCount [
 	self assert: actual equals: expected 
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 AINaiveBayesClassifierTest >> testLikelihoodByLabelAndWordInWithLabels [
 	| expected actual |
 	
@@ -72,7 +105,7 @@ AINaiveBayesClassifierTest >> testLikelihoodByLabelAndWordInWithLabels [
 	self assert: actual equals: expected
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 AINaiveBayesClassifierTest >> testPredictLabelFor [
 	| newClassifier expected actual |
 	newClassifier := AINaiveBayesClassifier new.

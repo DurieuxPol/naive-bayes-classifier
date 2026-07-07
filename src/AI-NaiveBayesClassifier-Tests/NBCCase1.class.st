@@ -1,22 +1,23 @@
 Class {
-	#name : #NBCCase1,
-	#superclass : #NBCExampleCase,
-	#category : #'AI-NaiveBayesClassifier-Tests'
+	#name : 'NBCCase1',
+	#superclass : 'NBCExampleCase',
+	#category : 'AI-NaiveBayesClassifier-Tests',
+	#package : 'AI-NaiveBayesClassifier-Tests'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 NBCCase1 >> arrayOfDocuments [
 	^ #((I am Sam)
 		(Sam I am)
 		(I do not like green eggs and ham)).
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 NBCCase1 >> arrayOfLabels [
 	^ #(spam spam ham)
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 NBCCase1 >> documentCountsByLabelAndWord [
 	^ {
 		'spam' -> {
@@ -30,7 +31,7 @@ NBCCase1 >> documentCountsByLabelAndWord [
 	} asDictionary
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 NBCCase1 >> documentLikelihoods [
 	^ { 
 		'spam' -> { 1 . 1 . 0 } .
@@ -38,44 +39,44 @@ NBCCase1 >> documentLikelihoods [
 	} asDictionary
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 NBCCase1 >> documentPriors [
 	^ { (2/3) . (2/3) . (1/3) }
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 NBCCase1 >> labelCounts [
 	^ { 'spam' -> 2 . 'ham' -> 1 } asDictionary
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 NBCCase1 >> labelLikelihoods [
 	^ {{ 'spam' -> 1 . 'ham' -> 0 } asDictionary .
 		{ 'spam' -> 1 . 'ham' -> 0 } asDictionary .
 		{ 'spam' -> 0 . 'ham' -> 1 } asDictionary }
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 NBCCase1 >> labelPriors [
 	^ { 'spam' -> (2/3) . 'ham' -> (1/3) } asDictionary
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 NBCCase1 >> labels [
 	^ #(spam ham) asSet
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 NBCCase1 >> predictedLabels [ 
 	^ #(spam spam ham)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 NBCCase1 >> vocabulary [
 	^ #(I am Sam do not like green eggs and ham) asSet
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 NBCCase1 >> wordLikelihoods [
 	^ {
 		'spam' -> {

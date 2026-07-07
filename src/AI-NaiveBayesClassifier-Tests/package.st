@@ -1,1 +1,1 @@
-Package { #name : #'AI-NaiveBayesClassifier-Tests' }
+Package { #name : 'AI-NaiveBayesClassifier-Tests' }
